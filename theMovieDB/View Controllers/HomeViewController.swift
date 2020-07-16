@@ -133,7 +133,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                     dictTitle = tmpTitle
                                 }
                                 if let tmpReleaseDate = dictionary["release_date"] as? String {
-                                    dictReleaseDate = tmpReleaseDate
+                                    let dateFGet = DateFormatter()
+                                    dateFGet.dateFormat = "YYYY-mm-dd"
+                                    let date = dateFGet.date(from: tmpReleaseDate)
+                                    let dateFPost = DateFormatter()
+                                    dateFPost.dateFormat = "DD-mm-yyyy"
+                                    dictReleaseDate = dateFPost.string(from: date!)
                                 }
                                 
                                 self.movies.append(MoviePlaceholder(id: dictId, img: dictImgURL, title: dictTitle, date: dictReleaseDate, rating: dictRating))

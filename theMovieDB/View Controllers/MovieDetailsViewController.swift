@@ -91,7 +91,12 @@ class MovieDetailsViewController: UIViewController {
                             
                         }
                         if let tmpReleaseDate = decodedData["release_date"] as? String {
-                            self.releaseDate = tmpReleaseDate
+                            let dateFGet = DateFormatter()
+                            dateFGet.dateFormat = "YYYY-mm-dd"
+                            let date = dateFGet.date(from: tmpReleaseDate)
+                            let dateFPost = DateFormatter()
+                            dateFPost.dateFormat = "DD-mm-yyyy"
+                            self.releaseDate = dateFPost.string(from: date!)
                             
                         }
                         if let tmpGenre = decodedData["genres"] as? NSArray {

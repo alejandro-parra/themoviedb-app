@@ -10,32 +10,33 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
-        // Initialization code
     }
     
     func configure(with movie: MoviePlaceholder) {
+        self.titleLabel.numberOfLines = 2
         self.titleLabel.text = movie.title
-        self.ratingLabel.text = movie.rating
+        self.ratingLabel.text = String(movie.rating)
         self.releaseDateLabel.text = movie.date
         setImage(with: movie)
+        self.footerView.alpha = 0.5
 
     }
     
     static func nib() -> UINib {
         return UINib(nibName: "HomeCollectionViewCell", bundle: nil)
     }
-    
-    
-    
+
     func setImage(with movie: MoviePlaceholder){
         //initialize documents directory to see if the image is already downloaded
         let docsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!

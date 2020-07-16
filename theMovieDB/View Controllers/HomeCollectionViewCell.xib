@@ -29,27 +29,27 @@
                                 <rect key="frame" x="0.0" y="421.5" width="347" height="105.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgX-nM-DxJ">
-                                        <rect key="frame" x="10" y="70.5" width="230.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="10" y="82.5" width="260.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8b-9L-bce">
-                                        <rect key="frame" x="272.5" y="70.5" width="59.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="294.5" y="78.5" width="37.5" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="T8F-Jb-eRq" userLabel="starImageView">
-                                        <rect key="frame" x="240.5" y="70.5" width="30" height="30"/>
+                                        <rect key="frame" x="270.5" y="78.5" width="22" height="22"/>
                                         <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="T8F-Jb-eRq" secondAttribute="height" multiplier="1:1" id="vwR-Pw-VBa"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terminator:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESX-gn-6b5">
-                                        <rect key="frame" x="10" y="0.0" width="322" height="65.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="10" y="0.0" width="322" height="73.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -94,6 +94,7 @@
             <viewLayoutGuide key="safeArea" id="zDN-dG-2O8"/>
             <size key="customSize" width="258" height="527"/>
             <connections>
+                <outlet property="footerView" destination="OTf-tT-i4j" id="tox-wc-zfM"/>
                 <outlet property="imageView" destination="cLp-vP-AdA" id="fK1-VG-rEt"/>
                 <outlet property="ratingLabel" destination="o8b-9L-bce" id="N61-ua-YBr"/>
                 <outlet property="releaseDateLabel" destination="DgX-nM-DxJ" id="Fqc-cm-tGl"/>

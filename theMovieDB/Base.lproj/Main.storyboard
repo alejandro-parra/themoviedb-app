@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dkP-RP-2kA">
-                                <rect key="frame" x="5" y="88" width="404" height="774"/>
+                                <rect key="frame" x="5" y="98" width="404" height="798"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j5w-If-M3S">
                                     <size key="itemSize" width="128" height="128"/>
@@ -25,36 +24,27 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hsH-WD-ULJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HY1-nY-tmP">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="dkP-RP-2kA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="NTP-6e-aAV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dkP-RP-2kA" secondAttribute="bottom" id="QyD-CA-F0w"/>
+                            <constraint firstAttribute="bottom" secondItem="dkP-RP-2kA" secondAttribute="bottom" id="QyD-CA-F0w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dkP-RP-2kA" secondAttribute="trailing" constant="5" id="Vt1-l7-Sec"/>
-                            <constraint firstItem="dkP-RP-2kA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yTM-2Q-9tb"/>
+                            <constraint firstItem="dkP-RP-2kA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="yTM-2Q-9tb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Peliculas" id="geJ-Uy-wsZ"/>
                     <connections>
                         <outlet property="collectionView" destination="dkP-RP-2kA" id="01Q-0A-Kb4"/>
-                        <segue destination="psT-wZ-evT" kind="show" id="g9B-fg-1zK"/>
+                        <segue destination="psT-wZ-evT" kind="show" identifier="toMovieDetailsSegue" id="g9B-fg-1zK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="628"/>
+            <point key="canvasLocation" x="663.768115942029" y="627.45535714285711"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="Blt-R9-JCg">
@@ -205,6 +195,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <viewLayoutGuide key="contentLayoutGuide" id="IuJ-Qm-D0z"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="2Co-Ub-08e"/>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2uU-6H-Tlp">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -214,11 +207,29 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <constraint firstItem="o0v-fp-gLO" firstAttribute="top" secondItem="cWG-T9-7Bi" secondAttribute="top" id="ONV-wn-bt0"/>
                             <constraint firstItem="o0v-fp-gLO" firstAttribute="trailing" secondItem="cWG-T9-7Bi" secondAttribute="trailing" id="THe-kC-0KL"/>
                             <constraint firstItem="o0v-fp-gLO" firstAttribute="leading" secondItem="cWG-T9-7Bi" secondAttribute="leading" id="Wgr-aQ-nlH"/>
+                            <constraint firstItem="2uU-6H-Tlp" firstAttribute="centerY" secondItem="kAs-HF-GPv" secondAttribute="centerY" id="abq-LH-vPV"/>
+                            <constraint firstItem="2uU-6H-Tlp" firstAttribute="centerX" secondItem="kAs-HF-GPv" secondAttribute="centerX" id="aie-7t-xjY"/>
                             <constraint firstItem="fNB-io-aUX" firstAttribute="trailing" secondItem="cWG-T9-7Bi" secondAttribute="trailing" id="dNY-a5-baZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cWG-T9-7Bi"/>
                     </view>
                     <navigationItem key="navigationItem" id="Euh-9J-Hgj"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="2uU-6H-Tlp" id="Tra-Zn-xiO"/>
+                        <outlet property="descriptionLabel" destination="UUd-OP-b4t" id="XWW-lE-wCM"/>
+                        <outlet property="descriptionStaticLabel" destination="3Hm-vj-u0d" id="fDx-BT-bZK"/>
+                        <outlet property="durationLabel" destination="6nU-GL-QHe" id="aEn-Du-1fy"/>
+                        <outlet property="durationStaticLabel" destination="XR3-jN-Qx6" id="VWP-Or-qMV"/>
+                        <outlet property="genreLabel" destination="wjy-iM-s2i" id="rej-pK-wbr"/>
+                        <outlet property="genresStaticLabel" destination="0GQ-4T-gid" id="40o-d8-clO"/>
+                        <outlet property="imageView" destination="o0v-fp-gLO" id="SM1-Rp-ZUA"/>
+                        <outlet property="ratingLabel" destination="bit-0D-wcY" id="C4P-uY-xlc"/>
+                        <outlet property="ratingStaticLabel" destination="AJz-YY-7Lf" id="ZIS-au-Cpn"/>
+                        <outlet property="releaseDateLabel" destination="GoW-c9-acp" id="HdE-t3-jOB"/>
+                        <outlet property="releaseDateStaticLabel" destination="e8X-Zi-xPI" id="1bl-el-Xlw"/>
+                        <outlet property="scrollView" destination="fNB-io-aUX" id="wKi-2x-nXL"/>
+                        <outlet property="titleLabel" destination="WQa-C5-v8i" id="ea5-Ea-of5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzL-Ac-eD1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
